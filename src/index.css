@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
+  }
+}
+
+body {
+  background-color: #0a0a0a;
+  color: white;
+  overflow-y: hidden;
+  background-size: 100px 100px;
+  z-index: -2;
+  background-image: url("/bg-grid.png");
+  background-position-y: -9px;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, 10%, white, 98%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, 01%, white, 98%, transparent);
+}
+
+.tools {
+  background: linear-gradient(
+    90deg,
+    #0a0a0a,
+    transparent 15%,
+    transparent 80%,
+    #0a0a0a
+  );
+  pointer-events: none;
+  inset: 0;
+  position: absolute;
+}
+
+@keyframes loop {
+  0% {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate {
+  animation: loop 100s linear infinite;
+}
+
+.animate-reverse {
+  animation: loop 100s linear infinite;
+  animation-direction: reverse;
+}
+.tool-bg {
+  background-color: #242424;
+  border: solid 1px #4d4c4c;
+}
+/* .project-bg{
+  background:  url(../public/discord.jpeg);
+  background-repeat: no-repeat;
+} */
+
+
+.side-nav a.active{
+  background-color: #3f3f46;
+}
+.overlay{
+  background-color: #3f3f46;
+  z-index: 10;
+  position: relative;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+}
+.active{
+  background-color: #3f3f46;
+}
+@keyframes handanimate{
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.waveanimation{
+  animation: handanimate 2s linear infinite;
+}
